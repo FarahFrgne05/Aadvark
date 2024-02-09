@@ -10,7 +10,7 @@ public class DiscountApplier {
   }
 
   void applyV1(int discount, List<User> users) {
-    for (int i = 1; i < users.size(); i++) { // <- Bug, should be `i = 0`
+    for (int i = 0; i < users.size(); i++) { // <- Bug, should be `i = 0`
       String message = String.format("You've got a new discount of %d%%", discount);
       User user = users.get(i);
       notifier.notify(user, message);
